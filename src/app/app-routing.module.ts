@@ -4,9 +4,16 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
+    // children
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'heroes',
+    loadChildren: () =>
+      import('./heroes/heroes.module').then((m) => m.HeroesModule),
+  },
+  // root
   {
     path: '404',
     component: NotFoundComponent,
