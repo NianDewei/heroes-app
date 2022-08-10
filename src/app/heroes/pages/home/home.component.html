@@ -1,3 +1,48 @@
-<p>home works!</p>
-<hr />
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="push" #sidenav>
+    <mat-nav-list>
+      <a routerLink="list" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>list</mat-icon>
+        List
+      </a>
+
+      <a routerLink="add" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>add_circle</mat-icon>
+        Add
+      </a>
+      <a routerLink="edit/465465464" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>edit_circle</mat-icon>
+        Edit
+      </a>
+      <a routerLink="search" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>search</mat-icon>
+        Search
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar>
+    <button
+      (click)="sidenav.toggle()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="spacer"></span>
+    <button mat-raised-button>
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-toolbar>
+  <!-- Body -->
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Body -->
+</mat-sidenav-container>
