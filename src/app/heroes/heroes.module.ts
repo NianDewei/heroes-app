@@ -12,6 +12,7 @@ import { ListComponent } from './pages/list/list.component';
 import { ListHeroesComponent } from './components/list-heroes/list-heroes.component';
 import { UrlHeroePipe } from './pipes/url-heroe.pipe';
 import { FormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     ListComponent,
     ListHeroesComponent,
     UrlHeroePipe,
+    ConfirmDialogComponent,
   ],
   imports: [
     CommonModule,

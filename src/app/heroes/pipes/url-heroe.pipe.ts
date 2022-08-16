@@ -8,9 +8,12 @@ export class UrlHeroePipe implements PipeTransform {
   transform(heroe: Heroe): string {
     const path = 'assets/';
 
-    const urlOfImageHeroe = path + 'heroes/' + heroe.id + '.jpg';
-    const urlNoImageHeroe = path + 'no-image.png';
+    const imageHeroe = path + 'heroes/' + heroe.id + '.jpg';
+    const noImageHeroe = path + 'no-image.png';
 
-    return heroe ? urlOfImageHeroe : urlNoImageHeroe;
+    if (!heroe.id && !heroe.alt_img) return noImageHeroe;
+    if (heroe.alt_img) return heroe.alt_img;
+
+    return heroe.alt_img || imageHeroe;
   }
 }

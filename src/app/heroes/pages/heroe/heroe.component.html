@@ -4,11 +4,9 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-
-
 <ng-template #divHeroe>
   <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
-    <div fxFlex="50">
+    <div fxFlex="50" fxLayoutAlign="center">
       <mat-card>
         <mat-card-header>
           <mat-card-title>{{ heroe.superhero }}</mat-card-title>
@@ -18,7 +16,7 @@
         <img
           mat-card-image
           [src]="heroe | urlHeroe"
-          title="{{heroe.superhero}}"
+          title="{{ heroe.superhero }}"
         />
       </mat-card>
     </div>
@@ -35,7 +33,9 @@
       </mat-list>
 
       <br />
-      <button mat-raised-button color="warn" (click)="backList()">Regresar</button>
+      <button mat-raised-button color="warn" (click)="backList()">
+        Regresar
+      </button>
     </div>
   </div>
 </ng-template>
