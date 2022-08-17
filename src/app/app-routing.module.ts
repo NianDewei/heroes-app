@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +13,8 @@ const routes: Routes = [
     path: 'heroes',
     loadChildren: () =>
       import('./heroes/heroes.module').then((m) => m.HeroesModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   // root
   {

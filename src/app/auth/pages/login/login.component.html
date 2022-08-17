@@ -1,1 +1,25 @@
-<p>login works!</p>
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+
+      <button style="margin-right:15px ;"
+        mat-raised-button
+        color="accent"
+        type="button"
+        title="login"
+        (click)="login()"
+      >
+        Login Auth
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        title="login without auth"
+        (click)="loginWithout()"
+      >
+      Login Without Auth
+      </button>
+
+  </mat-grid-tile>
+</mat-grid-list>
